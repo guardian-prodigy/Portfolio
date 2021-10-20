@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: inherit;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: inherit;
+  text-transform: capitalize;
+}
+img {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+a {
+  display: inline-block;
+}
+a:not(.nothing) {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+i {
+  transition: var(--transitions-normal-linear);
+  cursor: pointer;
+}

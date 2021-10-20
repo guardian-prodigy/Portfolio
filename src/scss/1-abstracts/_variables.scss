@@ -1,0 +1,164 @@
+$variables: (
+  // fonts
+  // fonts:
+  //   (
+  //     "Grenze": (
+  //       "Light": "Grenze",
+  //     ),
+  //     "Nanum": (
+  //       "Regular": "Nanum",
+  //     ),
+  //     "Texturina": (
+  //       "normal": "Texturina",
+  //     ),
+  //   ),
+  // end of fonts
+  // letter spacings
+  letter-spacing:
+    (
+      small: (
+        "100": "0.1rem",
+        "200": "0.2rem",
+      ),
+      medium: (
+        "300": "0.3rem",
+      ),
+    ),
+  // end of letter-spacings
+  // border-radius
+  border-radius:
+    (
+      "normal": (
+        "1": "0.1rem",
+        "2": "0.25rem",
+      ),
+      "circle": (
+        "circle": "50%",
+      ),
+    ),
+  // end of border-radius
+  // animation
+  transitions:
+    (
+      "normal": (
+        "linear": 0.3s all linear,
+        "ease-in": 0.3s all ease-in,
+        "ease-out": 0.3s all ease-out,
+        "ease-in-out": 0.3s all ease-in-out,
+      ),
+    ),
+  // end of animation
+  // max-widths
+  max-widths:
+    (
+      "width": (
+        "small": 300px,
+        "medium": 500px,
+        "large": 768px,
+        "large-xx": 992px,
+        "large-xxx": 1200px,
+      ),
+    ),
+  // end of widths
+  // shadows
+  shadows:
+    (
+      "Element-shadows": (
+        "light-shadow": 0 5px 15px rgba(0, 0, 0, 0.2),
+        "dark-shadow": 0 5px 15px rgba(0, 0, 0, 0.4),
+      ),
+      "text-shadows": (
+        "light-shadow": 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1),
+        "dark-shadow": 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3),
+      ),
+    ),
+  // end of shadows
+  // colors
+  clr:
+    (
+      "grey": (
+        "100": #ffffff,
+        "200": #f2f2f2,
+        "300": #cccccc,
+        "400": #e6e6e6,
+        "500": #b3b3b3,
+        "600": #999999,
+        "700": #8d8d8d,
+        "800": #737373,
+        "900": #4d4d4d,
+        "1000": #262626,
+      ),
+      "green": (
+        "100": #66b366,
+        "200": #339933,
+        "300": #008000,
+        "400": #006600,
+        "500": #004d00,
+      ),
+      "yellow": (
+        "100": #ffff66,
+        "200": #ffff33,
+        "300": #ffff00f8,
+        "400":#cccc00,
+      ),
+      "rgbaBlack": (
+        "100": rgba(0, 0, 0, 0.1),
+        "200": rgba(0, 0, 0, 0.2),
+        "300": rgba(0, 0, 0, 0.3),
+        "400": rgba(0, 0, 0, 0.4),
+        "500": rgba(0, 0, 0, 0.5),
+        "600": rgba(0, 0, 0, 0.6),
+        "700": rgba(0, 0, 0, 0.7),
+        "800": rgba(0, 0, 0, 0.8),
+        "900": rgba(0, 0, 0, 0.9),
+        "1000": rgba(0, 0, 0, 1),
+      ),
+    ),
+  // end of colors
+  // grid-vars
+  grid:
+    (
+      "column": (
+        "1": 1rem,
+        "2": 2rem,
+        "3": 3rem,
+      ),
+      "row": (
+        "1": 1rem,
+        "2": 2rem,
+        "3": 3rem,
+      ),
+      "gap": (
+        "1": 1rem,
+        "2": 2rem,
+        "3": 3rem,
+      ),
+    ),
+  // end of grid-vars
+);
+// breakpoints
+$breakpoints: (
+  "small": 320px,
+  "medium": 578px,
+  "large": 768px,
+  "large-xx": 992px,
+  "large-xxx": 1200px,
+  "largest": 1500px,
+); // end of breakpoints
+// font-sizes
+$headerSizes: (
+  "null": 2rem,
+  "small": 2.5rem,
+  "medium": 3rem,
+  "large": 3.5rem,
+  "large-xxx": 3.7rem,
+);
+$p-font-sizes: (
+  "null": 1.3rem,
+  "small": 1.5rem,
+  "medium": 1.7rem,
+  "large": 1.9rem,
+  "large-xxx": 2rem,
+);
+
+$perspective: 1500rem;

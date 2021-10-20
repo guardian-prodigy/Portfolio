@@ -1,0 +1,6 @@
+@function Multiply($num, $times) {
+  @return $num * $times;
+}
+@function Opacity($color, $opacity) {
+  @return rgba($color, $opacity);
+}

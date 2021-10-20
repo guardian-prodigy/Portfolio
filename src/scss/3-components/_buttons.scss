@@ -1,0 +1,18 @@
+button,
+button:hover,
+button:link,
+button:visited,
+button:active {
+  border: none;
+  color: inherit;
+  background: inherit;
+  cursor: pointer;
+}
+.main-center__btn-container__btn {
+  background: var(--clr-green-200);
+  padding: 0.5rem 0.2rem;
+  border-radius: var(--border-radius-normal-2);
+  font-family: "Courier New", Courier, monospace;
+  text-transform: capitalize;
+  animation: pulse 3s linear infinite alternate-reverse;
+}

@@ -1,0 +1,29 @@
+@use "../../1-abstracts/mixins" as nav;
+.navbar {
+  padding: 0.5rem;
+  background-color: var(--clr-grey-400);
+  box-shadow: var(--shadows-text-shadows-light-shadow);
+  pointer-events: none;
+  &__center {
+    display: flex;
+    align-items: center;
+    &-logo {
+      @include nav.Text_Logo();
+      margin-right: auto;
+      @include nav.mq(small) {
+        font-size: 1.5rem;
+      }
+      @include nav.mq(medium) {
+        font-size: 2rem;
+      }
+      @include nav.mq(large) {
+        font-size: 3rem;
+      }
+    }
+    &-icon {
+      font-size: 2rem;
+      color: var(--clr-green-200);
+      animation: pulse 2s linear infinite forwards alternate-reverse;
+    }
+  }
+}

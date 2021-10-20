@@ -1,0 +1,194 @@
+@use "./variables" as mix;
+// each functions
+@mixin Variables($MixinValue: mix.$fs-map) {
+  @each $ListItem, $ListValue in $MixinValue {
+    @each $listname, $secondaryListValue in $ListValue {
+      @each $value-name, $value-Value in $secondaryListValue {
+        --#{$ListItem}-#{$listname}-#{$value-name}: #{$value-Value};
+      }
+    }
+  }
+}
+// end of each functions
+// shapes
+@mixin rhombus {
+  -webkit-clip-path: polygon(50% 0%, 100% 7%, 100% 93%, 50% 100%, 0 93%, 0 7%);
+  clip-path: polygon(50% 0%, 100% 7%, 100% 93%, 50% 100%, 0 93%, 0 7%);
+}
+@mixin circle {
+  -webkit-clip-path: circle(100% at 0% 0%);
+  clip-path: circle(100% at 0% 0%);
+}
+@mixin message {
+  -webkit-clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    75% 75%,
+    75% 100%,
+    50% 75%,
+    0% 75%
+  );
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    75% 75%,
+    75% 90%,
+    30% 75%,
+    0% 75%
+  );
+}
+// end of shapes
+
+// backgrounds
+@mixin BackgroundClippedColors(
+  $background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4))
+) {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background: $background;
+}
+// end of backgrounds
+
+// media-queries
+@mixin mq($size) {
+  $screensize: map-get(
+    $map: mix.$breakpoints,
+    $key: $size,
+  );
+  @media screen and (min-width: $screensize) {
+    @content;
+  }
+}
+@mixin font-size($fs-map, $fs-breakpoints: mix.$breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    } @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+// end of media-queries
+
+@mixin PseudoElements(
+  $loc: after,
+  $widthMain: 100%,
+  $margin: 0 auto,
+  $heightMain: 100%,
+  $border: none,
+  $content: "",
+  $top: 0,
+  $left: 0,
+  $right: 0,
+  $bottom: 0,
+  $zIndex: -1,
+  $widthPseudo: 100%,
+  $heightPseudo: 100%,
+  $background: red,
+  $filter: blur(20px)
+) {
+  position: relative;
+  width: $widthMain;
+  margin: $margin;
+  height: $heightMain;
+  &::#{$loc} {
+    content: $content;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    z-index: $zIndex;
+    position: absolute;
+    width: $widthPseudo;
+    height: $heightPseudo;
+    background: $background;
+    -webkit-filter: $filter;
+    filter: $filter;
+    border: $border;
+    @content;
+  }
+}
+
+// underlined elemets
+@mixin UnderlineInSeperateDiv(
+  $height: 2rem,
+  $background: blue,
+  $width: 60%,
+  $margin: 0 auto
+) {
+  height: $height;
+  background: $background;
+  width: $width;
+  margin: $margin;
+}
+@mixin UnderlineInSameDiv(
+  $border-style: dotted,
+  $border-color: blue,
+  $border-bottom-width: 0.25rem
+) {
+  border-style: $border-style;
+  border-color: $border-color;
+  border-bottom-width: $border-bottom-width;
+}
+// end of underlined elements
+
+// special typography effects
+@mixin Text_Logo(
+  $background: linear-gradient(45deg, var(--clr-yellow-400), var(--clr-green-200)),
+  $webkit_background_clip: text,
+  $color: transparent,
+  $font-family: var(--fonts-Grenze-Light),
+  $display: grid,
+  $spacing: var(--letter-spacing-small-100),
+  $shadow-value: var(--shadows-Element-shadows-dark-shadow),
+  $font-size: null,
+  $text-align: center,
+  $animation-name: SlideInLeftToRight
+) {
+  background: $background;
+  -webkit-background-clip: $webkit_background_clip;
+  background-clip: $webkit_background_clip;
+  color: $color;
+  font-family: $font-family;
+  display: $display;
+  letter-spacing: $spacing;
+  text-shadow: $shadow-value;
+  font-size: $font-size;
+  text-align: $text-align;
+  -webkit-animation: $animation-name 1s ease-in 1 forwards;
+  animation: $animation-name 1s ease-in 1 forwards;
+}
+// end of special typography effects
+
+// grid layouts
+@mixin gridTemplateRepeat(
+  $max-width: var(--max-widths-width-large),
+  $gap: var(--grid-gap-1),
+  $auto-property: auto-fit,
+  $min-value: 300px,
+  $max-value: 1fr,
+  $content-placement: center
+) {
+  & {
+    display: grid;
+    max-width: $max-width;
+    gap: $gap;
+    grid-template-columns: repeat(
+      $auto-property,
+      minmax($min-value, $max-value)
+    );
+    place-items: $content-placement;
+  }
+}
+// end of grid layouts

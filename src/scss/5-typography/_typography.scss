@@ -1,0 +1,8 @@
+@use '../1-abstracts/mixins' as t;
+@use '../1-abstracts/variables' as *;
+p {
+    @include t.font-size($p-font-sizes);
+}
+h1,h2,h3,h4, a {
+    @include t.font-size($headerSizes);
+}

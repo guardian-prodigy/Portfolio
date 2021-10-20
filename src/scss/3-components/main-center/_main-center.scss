@@ -1,0 +1,68 @@
+@use "../../1-abstracts/mixins" as main;
+.main-center {
+  position: absolute;
+  inset: 0;
+  max-height: 100vh;
+  z-index: -1;
+  background: linear-gradient(
+      90deg,
+      var(--clr-rgbaBlack-700),
+      var(--clr-rgbaBlack-400)
+    ),
+    url("../../img/akash.jpg") center/cover no-repeat;
+  display: grid;
+  align-content: center;
+  &__intro-container {
+    margin-left: 2rem;
+    width: fit-content;
+    p {
+      font-size: 2rem;
+      color: var(--clr-yellow-400);
+      text-align: start;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+  }
+  &__btn-container {
+    margin: 1rem 0 1rem 2rem;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+  &__icons {
+    margin-left: 2rem;
+    i {
+      color: var(--clr-green-100);
+      font-size: 1.2rem;
+      &:hover {
+        color: var(--clr-yellow-400);
+      }
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+  .main-center__down-arrow {
+    position: absolute;
+    bottom: 1rem;
+    padding: 0.5rem;
+    right: 1rem;
+    animation: pulse 3s linear infinite alternate-reverse;
+    color: var(--clr-yellow-400);
+    border-radius: 50%;
+    border: solid var(--clr-green-400) 0.15rem;
+    height: 2.2rem;
+    width: 2.2rem;
+    display: grid;
+    place-content: center;
+    &__icon {
+      font-size: 1.5rem;
+    }
+    &:hover {
+        text-decoration: none;
+        color: var(--clr-green-400);
+
+        border: solid 0.15rem var(--clr-yellow-400);
+    }
+  }
+}
