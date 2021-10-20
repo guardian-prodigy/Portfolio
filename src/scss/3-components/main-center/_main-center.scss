@@ -1,19 +1,19 @@
 @use "../../1-abstracts/mixins" as main;
 .main-center {
-  position: absolute;
-  inset: 0;
-  max-height: 100vh;
-  z-index: -1;
+  position: relative;
+  min-height: calc(100vh - 54px);
   background: linear-gradient(
       90deg,
       var(--clr-rgbaBlack-700),
       var(--clr-rgbaBlack-400)
     ),
-    url("../../img/akash.jpg") center/cover no-repeat;
+    url("../../img/akash.jpg") center/cover fixed no-repeat;
   display: grid;
   align-content: center;
   &__intro-container {
     margin-left: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     p {
       font-size: 2rem;
@@ -34,6 +34,7 @@
     i {
       color: var(--clr-green-100);
       font-size: 1.2rem;
+      
       &:hover {
         color: var(--clr-yellow-400);
       }
@@ -42,27 +43,38 @@
       }
     }
   }
-  .main-center__down-arrow {
-    position: absolute;
-    bottom: 1rem;
-    padding: 0.5rem;
-    right: 1rem;
-    animation: pulse 3s linear infinite alternate-reverse;
-    color: var(--clr-yellow-400);
-    border-radius: 50%;
-    border: solid var(--clr-green-400) 0.15rem;
-    height: 2.2rem;
-    width: 2.2rem;
-    display: grid;
-    place-content: center;
-    &__icon {
-      font-size: 1.5rem;
+  .main-center__down-angle {
+    @include main.BackgroundClippedColors(
+      $background:
+        linear-gradient(45deg, var(--clr-green-100), var(--clr-yellow-300))
+    ) {
+      background-size: 400%;
+      -webkit-animation: mainCenterHomepageArrowsDown 2s linear infinite both;
+              animation: mainCenterHomepageArrowsDown 2s linear infinite both;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      display: grid;
     }
-    &:hover {
-        text-decoration: none;
-        color: var(--clr-green-400);
 
-        border: solid 0.15rem var(--clr-yellow-400);
+    &__icon {
+      color: transparent;
+      &:not(:nth-child(1)) {
+        margin-top: -1rem;
+      }
+      &:nth-child(1) {
+        -webkit-animation: mainCenterHomepageArrowsDown-arrows 0.3s linear 1 2.5s both;
+                animation: mainCenterHomepageArrowsDown-arrows 0.3s linear 1 2.5s both;
+      }
+      &:nth-child(2) {
+        -webkit-animation: mainCenterHomepageArrowsDown-arrows 0.3s linear 1 2s both;
+                animation: mainCenterHomepageArrowsDown-arrows 0.3s linear 1 2s both;
+      }
+      &:nth-child(3) {
+        -webkit-animation: mainCenterHomepageArrowsDown-arrows 0.3s linear 1 1.5s both;
+                animation: mainCenterHomepageArrowsDown-arrows 0.3s linear 1 1.5s both;
+      }
     }
   }
 }
+
