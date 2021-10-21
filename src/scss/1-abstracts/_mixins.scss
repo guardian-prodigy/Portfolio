@@ -135,12 +135,13 @@
 }
 @mixin UnderlineInSameDiv(
   $border-style: dotted,
-  $border-color: blue,
-  $border-bottom-width: 0.25rem
+  $border-color: variable-exists($name: --clr-green-100),
+  $border-top-width: 0.15rem
 ) {
-  border-style: $border-style;
-  border-color: $border-color;
-  border-bottom-width: $border-bottom-width;
+  border-top-style: $border-style;
+  border-top-color: $border-color;
+  border-top-width: $border-top-width;
+
 }
 // end of underlined elements
 

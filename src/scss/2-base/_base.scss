@@ -28,7 +28,7 @@ a {
 a:not(.nothing) {
   text-decoration: none;
   color: inherit;
-  &:hover {
+  &:hover:not(.main-center__down-angle) {
     text-decoration: underline;
   }
 }

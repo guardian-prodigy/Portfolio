@@ -185,7 +185,7 @@ a:not(.nothing) {
   text-decoration: none;
   color: inherit;
 }
-a:not(.nothing):hover {
+a:not(.nothing):hover:not(.main-center__down-angle) {
   text-decoration: underline;
 }
 
@@ -283,6 +283,11 @@ button:active {
   color: var(--clr-yellow-400);
   text-align: start;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+.main-center__intro-container p span {
+  border-top-style: dotted;
+  border-top-color: false;
+  border-top-width: 0.15rem;
 }
 .main-center__btn-container {
   margin: 1rem 0 1rem 2rem;

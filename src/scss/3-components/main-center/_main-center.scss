@@ -16,6 +16,9 @@
     width: -moz-fit-content;
     width: fit-content;
     p {
+      span {
+        @include main.UnderlineInSameDiv();
+      }
       font-size: 2rem;
       color: var(--clr-yellow-400);
       text-align: start;
@@ -59,6 +62,7 @@
 
     &__icon {
       color: transparent;
+
       &:not(:nth-child(1)) {
         margin-top: -1rem;
       }
